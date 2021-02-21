@@ -9,4 +9,4 @@ import ChartsResultCallback
 import MapsCallbacks
 
 
-app.server
+server = app.server
