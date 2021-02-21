@@ -265,7 +265,7 @@ app.layout = html.Div([
 
 #-----------------------------------------read query samples file----------------------------------------------------------------
 #make query examples table from csv file
-with open('/data/Book3.csv', 'rt') as f:
+with open('data/Book3.csv', 'rt') as f:
     csv_reader = csv.reader(f)
     headers = []
     queries = []
