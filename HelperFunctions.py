@@ -17,7 +17,7 @@ from MainApp import app
 start_table_df = pd.DataFrame(columns=[''])
 
 #---------------------------------------------------Upload File Callback for query1--------------------------------------------------------------
-UPLOAD_DIRECTORY = "../data/"
+UPLOAD_DIRECTORY = "data/"
 @app.callback(Output('endpoint-query1-intermediate-value1', 'title'),
               [
               Input('upload-data', 'fileNames'),
@@ -54,9 +54,9 @@ def update_output(filenames, iscompleted):
 #-----------------------------------------Log File Upload data----------------------------------------------------------------
 def Log_File_Data(File_Name, File_Size, Total_Time_Taken):
     first_upload = True
-    if os.path.isfile('../data/FileUploadLog.csv'):
+    if os.path.isfile('data/FileUploadLog.csv'):
         first_upload = False
-    with open('../data/FileUploadLog.csv', 'a', newline='') as file:
+    with open('data/FileUploadLog.csv', 'a', newline='') as file:
         writer = csv.writer(file, delimiter= ';')
         if (first_upload):
             writer.writerow(["File Name", "File Size in Bytes","Total Time Taken in seconds"])
@@ -65,9 +65,9 @@ def Log_File_Data(File_Name, File_Size, Total_Time_Taken):
 #-----------------------------------------Log Query data----------------------------------------------------------------
 def Log_Query_Data(Endpoint, query, rows, cols, Total_Time_Taken):
     first_upload = True
-    if os.path.isfile('../data/QueryLog.csv'):
+    if os.path.isfile('data/QueryLog.csv'):
         first_upload = False
-    with open('../data/QueryLog.csv', 'a', newline='') as file:
+    with open('data/QueryLog.csv', 'a', newline='') as file:
         writer = csv.writer(file, delimiter= ';')
         if (first_upload):
             writer.writerow(["Endpoint","query","Rows","Columns","Total Time Taken in seconds"])
@@ -76,9 +76,9 @@ def Log_Query_Data(Endpoint, query, rows, cols, Total_Time_Taken):
 #-----------------------------------------Log RDF Parsing Time----------------------------------------------------------------
 def Log_Parse_Data(Endpoint,Total_Time_Taken):
     first_upload = True
-    if os.path.isfile('../data/RDFParseLog.csv'):
+    if os.path.isfile('data/RDFParseLog.csv'):
         first_upload = False
-    with open('../data/RDFParseLog.csv', 'a', newline='') as file:
+    with open('data/RDFParseLog.csv', 'a', newline='') as file:
         writer = csv.writer(file, delimiter= ';')
         if (first_upload):
             writer.writerow(["Endpoint","Total Time Taken in seconds"])
@@ -86,7 +86,7 @@ def Log_Parse_Data(Endpoint,Total_Time_Taken):
         
 #-----------------------------------------read query samples file----------------------------------------------------------------
 #make query examples table from csv file
-with open('../data/Book3.csv', 'rt') as f:
+with open('data/Book3.csv', 'rt') as f:
     csv_reader = csv.reader(f)
     headers = []
     queries = []
