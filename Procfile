@@ -1,1 +1,1 @@
-web: gunicorn src/main.ipynb:server
+web: gunicorn main:server
