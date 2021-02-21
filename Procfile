@@ -1,1 +1,1 @@
-web: gunicorn main.ipynb:server
+web: gunicorn dashboard:server
