@@ -17,7 +17,7 @@ from MainApp import app
 start_table_df = pd.DataFrame(columns=[''])
 
 #---------------------------------------------------Upload File Callback for query1--------------------------------------------------------------
-UPLOAD_DIRECTORY = "../data/"
+UPLOAD_DIRECTORY = "data/"
 @app.callback(Output('endpoint-query1-intermediate-value1', 'title'),
               [Input('upload-data', 'contents'),
               Input('upload-data', 'filename'),
